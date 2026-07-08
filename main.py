@@ -3,17 +3,19 @@ import json
 import os
 import re
 from markdownify import markdownify as md
-import google.generativeai as genai
+from google import genai
 from dotenv import load_dotenv
 
 API_URL = "https://support.optisigns.com/api/v2/help_center/en-us/articles.json"
 STATE_FILE = "state.json"
 OUTPUT_DIR = "articles"
 
-# Load environment variable
+# Load environment variable from .env (useful for local testing)
 load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-genai.configure(api_key=GEMINI_API_KEY)
+
+# Initialize the new GenAI client. 
+# It automatically detects GEMINI_API_KEY in your environment, so no config line is needed.
+client = genai.Client()
 
 def load_state():
     if os.path.exists(STATE_FILE):
@@ -49,19 +51,20 @@ def run_daily_job():
         else:
             counts["updated"] += 1
             
-        # Scrape and save Markdown (from Phase 1 logic)
-        # title_slug = article['name'].lower().replace(" ", "-")
+        # Safely convert title to slug, stripping slashes and special characters
         raw_title = article.get('name', 'untitled')
         title_slug = re.sub(r'[^a-z0-9]+', '-', raw_title.lower()).strip('-')
+        
+        # Scrape and save Markdown
         md_content = md(article['body'], heading_style="ATX")
         file_path = os.path.join(OUTPUT_DIR, f"{title_slug}.md")
         
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(md_content)
             
-        # Upload to Gemini (from Phase 2 logic)
+        # Upload to Gemini using the new SDK syntax
         print(f"Uploading new/updated file: {file_path}")
-        genai.upload_file(path=file_path, display_name=title_slug)
+        client.files.upload(file=file_path, config={'display_name': title_slug})
         
         # Update state dictionary
         state[article_id] = live_updated_at

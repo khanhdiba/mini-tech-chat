@@ -1,4 +1,4 @@
 requests
 markdownify
-google-generativeai
+google-genai
 dotenv
