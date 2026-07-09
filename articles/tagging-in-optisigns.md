@@ -1,5 +1,3 @@
-# Tagging in OptiSigns
-
 ### In this article, we will go over how to best use the tagging feature in OptiSigns to organize your assets and screens.
 
 * [Screen Tagging](#ScreenTagging)

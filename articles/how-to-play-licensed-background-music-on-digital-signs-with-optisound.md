@@ -1,5 +1,3 @@
-# How to Play Licensed Background Music on Digital Signs with OptiSound
-
 ### In this article, we’ll guide you through setting up **OptiSound**, our licensed background music add-on built directly into OptiSigns.
 
 * [What is OptiSound?](#Whatis)

@@ -1,5 +1,3 @@
-# Handle OAuth Authentication using API Gateway Pre-request Configuration
-
 ### In this article, we will explain how to set up a Pre-request to retrieve an OAuth 2.0 access token for connecting to an API using an API Gateway.
 
 OptiSigns API Gateway allows for OAuth authentication via Pre-request. This gives users the capability to consume API that requires OAuth authentication or similar.

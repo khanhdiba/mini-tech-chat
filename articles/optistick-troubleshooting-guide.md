@@ -1,5 +1,3 @@
-# OptiStick Troubleshooting Guide
-
 ### In this article, we will troubleshoot the most common issues people encounter using our OptiStick Player.
 
 * [Identify Your Device](#Identify)

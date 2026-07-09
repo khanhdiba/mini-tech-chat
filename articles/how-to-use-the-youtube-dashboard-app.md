@@ -1,5 +1,3 @@
-# How to Use the YouTube Dashboard App
-
 ### In this article, we'll show how to display YouTube Dashboard information on your digital signs with OptiSigns.
 
 * [What You'll Need](#WhatYouNeed)

@@ -1,5 +1,3 @@
-# How to Use the Google Search Console App
-
 ### In this article, we'll show how to display Google Search Console information on your digital signs with OptiSigns.
 
 * [What You'll Need](#WhatYouNeed)

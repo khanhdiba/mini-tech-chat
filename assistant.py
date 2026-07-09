@@ -21,35 +21,23 @@ Max 5 bullet points; else link to the doc.
 Cite up to 3 "Article URL:" lines per reply.
 """
 
-def upload_files_to_gemini(directory_path="articles"):
-    print(f"Scanning {directory_path} for Markdown files...")
-    md_files = glob.glob(os.path.join(directory_path, "*.md"))
-    
-    uploaded_files = []
-    
-    # Upload files to Gemini's storage using the new SDK
-    for file_path in md_files:
-        print(f"Uploading {file_path}...")
-        gemini_file = client.files.upload(
-            file=file_path, 
-            config={'display_name': os.path.basename(file_path)}
-        )
-        uploaded_files.append(gemini_file)
-        # Sleep briefly to respect API rate limits during bulk upload
-        time.sleep(2) 
-        
-    print(f"\nSuccessfully uploaded and embedded {len(uploaded_files)} files.")
-    return uploaded_files
 
-def run_sanity_check(uploaded_files):
+def run_sanity_check():
     print("\nInitializing OptiBot...")
+    
+    # 1. Fetch all active files directly from your Gemini API storage
+    print("Fetching active files from Gemini cloud storage...")
+    
+    # client.files.list() returns an iterator, so we wrap it in list()
+    active_files = list(client.files.list())
+    print(f"Found {len(active_files)} files ready for context.")
     
     # The sanity check question required by the assignment
     question = "How do I add a YouTube video?"
     print(f"User: {question}\n")
     
-    # Combine the uploaded file objects and the user question into a single list
-    prompt_contents = uploaded_files + [question]
+    # 2. Combine the fetched file objects and the user question into a single list
+    prompt_contents = active_files + [question]
     
     # Generate the response using the new client syntax
     response = client.models.generate_content(
@@ -63,6 +51,28 @@ def run_sanity_check(uploaded_files):
     
     print(f"OptiBot:\n{response.text}")
 
+def clear_all_files():
+    print("Fetching all active files from Gemini cloud storage...")
+    
+    # Retrieve the list of all files
+    active_files = list(client.files.list())
+    
+    if not active_files:
+        print("No files found. Your storage is already empty!")
+        return
+        
+    print(f"Found {len(active_files)} files. Starting deletion...")
+    
+    deleted_count = 0
+    for file in active_files:
+        print(f"Deleting: {file.display_name} ({file.name})")
+        
+        # Delete the file using its unique name identifier
+        client.files.delete(name=file.name)
+        deleted_count += 1
+        
+    print(f"\nSuccess! Permanently deleted {deleted_count} files.")
+
 if __name__ == "__main__":
-    files = upload_files_to_gemini()
-    run_sanity_check(files)
+    run_sanity_check()
+    # clear_all_files()

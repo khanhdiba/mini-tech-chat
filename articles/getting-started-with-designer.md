@@ -1,5 +1,3 @@
-# Getting Started with Designer
-
 ### In this article, we’ll cover the basic functions and features of the OptiSigns Designer app.
 
 * [Opening Designer](#OpeningDesigner)

@@ -1,5 +1,3 @@
-# What Access Does OptiSigns Have to My Account and Devices?
-
 * [The Basics](#Basics)
 * [Why our Team Might Access Your Account](#Why)
 * [How our Remote Device Support Works](#RemoteDeviceSupport)

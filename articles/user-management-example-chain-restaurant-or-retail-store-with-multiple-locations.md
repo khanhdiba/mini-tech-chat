@@ -1,5 +1,3 @@
-# User Management Example - Chain Restaurant or Retail Store with Multiple Locations
-
 ### In this article, we’ll share some best practices for setting up your OptiSigns portal if you have many screens and multiple locations.
 
 * [Identifying the Need](#Identifying)

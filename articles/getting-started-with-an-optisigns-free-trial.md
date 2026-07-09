@@ -1,5 +1,3 @@
-# Getting Started with an OptiSigns Free Trial
-
 ### In this article, we take you through the features you'll have access to with an OptiSigns Free Trial
 
 * [How Do I Start an OptiSigns Free Trial?](#Start)

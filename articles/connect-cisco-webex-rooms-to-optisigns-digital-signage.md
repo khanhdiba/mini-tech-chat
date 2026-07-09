@@ -1,5 +1,3 @@
-# Connect Cisco Webex Rooms to OptiSigns Digital Signage
-
 Turn idle Cisco Webex Rooms, Boards, and Desks into digital signage. When the device is in Standby, OptiSigns plays your assigned content — images, videos, dashboards, web apps — and clears it instantly the moment a meeting starts.
 
 This guide walks a Webex Full Administrator through the one-time setup at the organization level, and then per-room signage activation.

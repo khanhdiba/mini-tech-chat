@@ -1,5 +1,3 @@
-# How to Display a Snowflake Dashboard with OptiSigns
-
 * [What You'll Need](#WhatYouNeed)
 * [Creating a Snowflake App](#CreateanApp)
 * [Deploying a Snowflake App](#Deploying)

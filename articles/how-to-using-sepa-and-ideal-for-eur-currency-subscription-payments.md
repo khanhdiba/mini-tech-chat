@@ -1,5 +1,3 @@
-# How to Using SEPA and iDEAL for EUR Currency Subscription Payments
-
 Here’s a simple guide to help you use SEPA and iDEAL for the EUR Currency payment methods when creating or upgrading your subscription.
 
 #### **About the Payment Methods**

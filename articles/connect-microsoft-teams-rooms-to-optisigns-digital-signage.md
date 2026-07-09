@@ -1,5 +1,3 @@
-# Connect Microsoft Teams Rooms to OptiSigns Digital Signage
-
 Turn idle Microsoft Teams Rooms into digital signage. When a room is between meetings, OptiSigns plays your assigned content — announcements, dashboards, branding, menus — right on the room display, and clears it the instant a meeting starts.
 
 This guide covers the **two ways to connect a Teams Room to OptiSigns**, so you can pick the one that fits how your organization works.

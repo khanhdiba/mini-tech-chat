@@ -1,5 +1,3 @@
-# Using the Japan Earthquake App
-
 * [What You'll Need](#WhatYouNeed)
 * [Creating a Japan Earthquake App](#CreateanApp)
 * [Deploying a Japan Earthquake App](#Deploying)

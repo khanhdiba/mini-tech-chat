@@ -2,3 +2,4 @@ requests
 markdownify
 google-genai
 dotenv
+streamlit

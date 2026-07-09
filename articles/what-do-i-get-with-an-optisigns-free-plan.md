@@ -1,5 +1,3 @@
-# What Do I Get With an OptiSigns Free Plan?
-
 ### An OptiSigns Free Plan lets you get started with our digital signage software. Here’s what you get when you sign up!
 
 * [OptiSigns Free Plan Features](#Features)
