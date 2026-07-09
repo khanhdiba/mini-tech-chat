@@ -8,11 +8,12 @@ An automated data ingestion pipeline and RAG-based AI support assistant. This pr
 - assistant.py (no longer use): the file to run and test the bot in terminal, does not have the UI.
 - scrape.py (no longer use): the file to run the scrape, no longer use because being wrapped in main.
 - main.py: this file is used by Railway to run the scripe and re-scrape daily.
-- app.py: the file you will use to run locally.
+- app.py: the file you will use to run locally. It is the UI of this app.
 - Dockerfile: the image building file for Railway.
+- requirements.txt: dependencies for this project.
+- state.json: the file used by main.py to check the state of slug to print the log.
 ### 1. Environment Setup
 Create a `.env` file in the root directory and add your Google Gemini API key (no hard-coded keys are in this repository), you can see `env.sample`:
-
 ```text
 GEMINI_API_KEY=your_actual_api_key_here
 ```
