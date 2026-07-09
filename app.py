@@ -70,7 +70,7 @@ if prompt := st.chat_input("E.g., 'How do I add a YouTube video?'"):
                 
                 # FIXED TYPO: gemini-1.5-flash
                 response = client.models.generate_content(
-                    model='gemini-3.5-flash',
+                    model='gemini-3.1-flash-lite',
                     contents=prompt_contents,
                     config=types.GenerateContentConfig(
                         system_instruction=SYSTEM_PROMPT,
